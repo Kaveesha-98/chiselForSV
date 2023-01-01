@@ -9,7 +9,7 @@ class fir_filter(
     ) extends Module {
 
     val WIDTH_M = WIDTH_X + WIDTH_B
-    val WIDTH_Y = WIDTH_M + B.size + 1
+    val WIDTH_Y = WIDTH_M + B.size
     val x = IO(Input(SInt(WIDTH_X.W)))
     val y = IO(Output(SInt(WIDTH_Y.W)))
 
