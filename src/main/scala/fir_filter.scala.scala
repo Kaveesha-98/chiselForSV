@@ -16,8 +16,8 @@ class fir_filter(
     y := Seq.fill(B.size - 1)(RegInit(0.S(WIDTH_X.W))) // initiating registers that reset to zero
         .scanLeft(RegNext(x, 0.S(WIDTH_X.W)))((priv, curr) => {curr := priv; curr}) // connecting them
         .zip(B.map(_.S(WIDTH_B.W))) // creates an array(software data structure) of (register, coefficient)
-        .map(reg_coeff => reg_coeff._1 * reg_coeff._2) // getting patrial products
-        .reduce(_ +& _) // accumilating the sums
+        .map{ case(reg, coeff) => reg * coeff } // getting products
+        .reduce(_ +& _) // accumilating the products
 
 }
 
