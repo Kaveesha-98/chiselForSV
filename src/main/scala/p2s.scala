@@ -23,7 +23,7 @@ class p2s(val N:Int = 8) extends Module {
       * 
       * p_valid indicated valid p_data to serialize.
       * 
-      * It takes N cycles of s_ready to be valid to finish transmitting. 
+      * It takes N cycles of s_ready to be asserted to finish transmitting. 
       */
     val state = RegInit(rx)
     switch(state){
