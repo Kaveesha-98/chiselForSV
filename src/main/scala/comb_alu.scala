@@ -2,7 +2,6 @@ import chisel3._
 import chisel3.util._
 import chisel3.experimental.BundleLiterals._
 
-// testing change
 class comb_alu(WIDTH: Int = 8) extends Module {
 	val W_ALU_SEL = 3
 
